@@ -1,0 +1,18 @@
+      Date & Time,  Trans,  Elap Time,  Data Trans,  Resp Time,  Trans Rate,  Throughput,  Concurrent,    OKAY,   Failed
+2020-08-04 15:23:13,    117,     144.20,         128,       3.26,        0.81,        0.89,        2.65,     117,       0
+
+
+{	
+  "transactions":			         117,
+	"availability":			      100.00,
+	"elapsed_time":			      144.20,
+	"data_transferred":		      128.20,
+	"response_time":		        3.26,
+	"transaction_rate":		        0.81,
+	"throughput":			        0.89,
+	"concurrency":			        2.65,
+	"successful_transactions":	         117,
+	"failed_transactions":		           0,
+	"longest_transaction":		        7.26,
+	"shortest_transaction":		        1.46
+}
