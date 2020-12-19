@@ -1,4 +1,4 @@
-BASE=http://127.0.0.1:8080/block/
+BASE=http://127.0.0.1:8080/blocks/
 
 $(BASE)28831 # Sudo setKey(0 -> 1)
 $(BASE)29258 # sudo.sudo(forceTransfer)
