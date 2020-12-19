@@ -1,7 +1,7 @@
 echo ---
 echo Starting up Sidecar with clinic doctor
 (
-  cd ~/substrate-api-sidecar \
+  cd ~/substrate-api-sidecar && \
   SAS_SUBSTRATE_WS_URL=wss://rpc.polkadot.io \
   SAS_LOG_LEVEL=http \
   clinic doctor -- node build/src/main.js
