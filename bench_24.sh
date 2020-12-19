@@ -1,5 +1,3 @@
-
-sleep 30
 echo ---
 echo Starting up Sidecar with clinic doctor
 (
