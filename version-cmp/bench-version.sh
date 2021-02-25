@@ -1,6 +1,6 @@
 #!/bin/sh
 
-echo starting up sidecar
+echo "Starting up sidecar"
 (cd /home/zeke/substrate-api-sidecar \
   && yarn start)
 
