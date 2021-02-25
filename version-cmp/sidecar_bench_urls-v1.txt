@@ -1,0 +1,41 @@
+BASE=http://127.0.0.1:8080/blocks/
+
+$(BASE)28831 # Sudo setKey(0 -> 1)
+$(BASE)29258 # sudo.sudo(forceTransfer)
+$(BASE)188836 # sudo.sudoUncheckedWeight runtime upgrade(v5 generalized proxies identity)
+$(BASE)197681 # sudo.sudo(forceTransfer)
+$(BASE)199405 # sudo.sudoUncheckedWeight runtime upgrade(v6 council / sudo can move claims)
+$(BASE)200732 # sudo.sudo(batch assign indices)
+$(BASE)214264 # sudo.sudoUncheckedWeight runtime upgrade(v7 frozen indices)
+$(BASE)214576 # proxy sudo batch of transfers
+$(BASE)243601 # proxy sudo batch of transfers
+$(BASE)244358 # sudo.sudoUncheckedWeight runtime upgrade(v8 (un)reserve events)
+$(BASE)287352 # sudo.sudo forceTransfer
+$(BASE)300532 # proxy.addProxy for `Any` from sudo(direct to proxy module)
+$(BASE)301569 # proxy sudo mint claim
+$(BASE)302396 # proxy sudo set vested claim
+$(BASE)303079 # sudo.sudoUncheckedWeight runtime upgrade(v9 add vested forceTransfer and new origin filtering)
+$(BASE)304468 # proxy sudo set balance(W3F)(failed)
+$(BASE)313396 # proxy sudo set storage
+$(BASE)314201 # sudo.sudoUncheckedWeight runtime upgrade(v10 allow sudo to do anything(i.e.fix new filtering))
+$(BASE)314326 # proxy sudo set balance(W3F)
+$(BASE)325148 # scheduler dispatched
+$(BASE)326556 # sudo.sudo force new era always
+$(BASE)341469 # proxy sudo force transfer
+$(BASE)342400 # sudo.sudoUncheckedWeight runtime upgrade(v11 scale validator count functions)
+$(BASE)342477 # sudo.sudo schedule regular validator set increases
+$(BASE)442600 # scheduler dispatched
+$(BASE)443963 # sudo.sudoUncheckedWeight runtime upgrade(v12 new staking rewards curve)
+$(BASE)444722 # proxy sudo batch of transfers
+$(BASE)516904 # sudo.sudo batch of transfers
+$(BASE)528470 # sudo.sudoUncheckedWeight runtime upgrade(v13 payout creates controller allow voting registrar proxy refactor as_sub)
+$(BASE)543510 # sudo.sudo force transfer
+$(BASE)645697 # proxy sudo batch of transfers
+$(BASE)744556 # proxy sudo batch of transfers
+$(BASE)746085 # sudo.sudoUncheckedWeight runtime upgrade(v15 enable council elections purchase)
+$(BASE)746605 # sudo.sudoAs add governance proxy
+$(BASE)786421 # sudo force transfer
+$(BASE)787923 # sudo.sudoUncheckedWeight runtime upgrade(v16 enable governance)
+$(BASE)790128 # proxy sudo batch of transfers
+$(BASE)799302 # runtime upgraded no more sudo
+$(BASE)799310 # after v17
