@@ -1,3 +1,29 @@
+local cjson = require "cjson"
+local cjson2 = cjson.new()
+local cjson_safe = require "cjson.safe"
+
+function load_request_objects_from_file(file)
+  local data = {}
+  local content
+
+  -- Check if the file exists
+  -- Resource: http://stackoverflow.com/a/4991602/325852
+  local f=io.open(file,"r")
+  if f~=nil then
+    content = f:read("*all")
+
+    io.close(f)
+  else
+    -- Return the empty array
+    return lines
+  end
+
+  -- Translate Lua value to/from JSON
+  data = cjson.decode(content)
+
+  return data
+end
+
 blocks = {
 '28831', -- Sudo setKey(0, -> 1)
 '29258', -- sudo.sudo(forceTransfer)
@@ -40,18 +66,19 @@ blocks = {
 '799310', -- after v17
 }
 
+blocks2 = load_request_objects_from_file('./cc1-blocks.json')
+
 counter = 1
 
 request = function()
-  if counter > #blocks then
+  if counter > #blocks2 then
     counter = 1
   end
 
-  local height = blocks[counter]
+  local height = blocks2[counter]
   counter = counter + 1
 
   local path  = string.format('/blocks/%s', height)
-  print("path: ", path)
 
   return wrk.format('GET', path)
 end
