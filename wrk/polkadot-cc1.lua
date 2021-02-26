@@ -1,28 +1,28 @@
-local cjson = require "cjson"
-local cjson2 = cjson.new()
-local cjson_safe = require "cjson.safe"
+-- local cjson = require "cjson"
+-- local cjson2 = cjson.new()
+-- local cjson_safe = require "cjson.safe"
 
-function load_request_objects_from_file(file)
-  local data = {}
-  local content
+-- function load_request_objects_from_file(file)
+--   local data = {}
+--   local content
 
-  -- Check if the file exists
-  -- Resource: http://stackoverflow.com/a/4991602/325852
-  local f=io.open(file,"r")
-  if f~=nil then
-    content = f:read("*all")
+--   -- Check if the file exists
+--   -- Resource: http://stackoverflow.com/a/4991602/325852
+--   local f=io.open(file,"r")
+--   if f~=nil then
+--     content = f:read("*all")
 
-    io.close(f)
-  else
-    -- Return the empty array
-    return lines
-  end
+--     io.close(f)
+--   else
+--     -- Return the empty array
+--     return lines
+--   end
 
-  -- Translate Lua value to/from JSON
-  data = cjson.decode(content)
+--   -- Translate Lua value to/from JSON
+--   data = cjson.decode(content)
 
-  return data
-end
+--   return data
+-- end
 
 blocks = {
 '28831', -- Sudo setKey(0, -> 1)
@@ -66,16 +66,16 @@ blocks = {
 '799310', -- after v17
 }
 
-blocks2 = load_request_objects_from_file('./cc1-blocks.json')
+-- blocks2 = load_request_objects_from_file('./cc1-blocks.json')
 
 counter = 1
 
 request = function()
-  if counter > #blocks2 then
+  if counter > #blocks then
     counter = 1
   end
 
-  local height = blocks2[counter]
+  local height = blocks[counter]
   counter = counter + 1
 
   local path  = string.format('/blocks/%s', height)
@@ -86,5 +86,12 @@ end
 delay = function()
   -- delay each request by 1 millisecond
   return 1
+end
+
+done = function(summary, latency, requests)
+  print("Total completed requests: ", summary.requests)
+  print("Failed requests: ", summary.errors.status)
+  print("Timeouts: ", summary.errors.status)
+  print("Average latency: ", (latency.mean/1000).."s")
 end
 
