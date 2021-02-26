@@ -89,6 +89,7 @@ delay = function()
 end
 
 done = function(summary, latency, requests)
+  -- Here we could log to file. We cold use an init() function to take in the file name
   print("Total completed requests: ", summary.requests)
   print("Failed requests: ", summary.errors.status)
   print("Timeouts: ", summary.errors.status)
